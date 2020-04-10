@@ -36,12 +36,14 @@
   (setq gc-cons-threshold gc-cons-threshold-orig))
 (add-hook 'emacs-startup-hook #'llin-emacs-started)
 
-;; Remove all the crufts from the UI.
+;; Simplify the UI.
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
+(setq ring-bell-function #'ignore)
 (menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
+(when (display-graphic-p)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1))
 
 ;; Don't create files automatically.
 (setq create-lockfiles nil)  ; .#lock
@@ -90,7 +92,7 @@
 
 ;; Load customization, e.g. font setting.
 (setq custom-file (concat user-emacs-directory "custom.el"))
-(load custom-file)
+(load custom-file 'no-error)
 
 ;; Add the melpa archive.
 (when (< emacs-major-version 27)

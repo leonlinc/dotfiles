@@ -1,0 +1,12 @@
+[alias]
+  a  = add
+  b  = branch
+  ci = commit
+  co = checkout
+  cp = cherry-pick
+  d  = diff
+  dc = diff --cached
+  l  = log --decorate --graph --oneline 
+  s  = status -s
+[color]
+  ui = auto
