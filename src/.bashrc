@@ -18,8 +18,7 @@ ssh_agent_start () {
 dot=$HOME/proj/dotfiles/src
 dot_install () {
   if [ ! -e $HOME/$1 ]; then
-    echo "Installing $HOME/$1"
-    cp $dot/$1 $HOME/$1
+    cp -v $dot/$1 $HOME/$1
   fi
 }
 dot_install .gitconfig
