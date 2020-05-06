@@ -123,7 +123,6 @@
 ;; Important variabls:
 ;; - `evil-mode-map-alist': figure out keymap priority.
 (use-package evil
-  :defer 0.1
   :init
   (setq evil-disable-insert-state-bindings t)
   (setq evil-search-module 'evil-search)
@@ -193,10 +192,8 @@
 (use-package company
   :defer t
   :init
+  (setq company-backends '(company-capf company-files (company-dabbrev-code company-keywords) company-dabbrev))
   (add-hook 'prog-mode-hook #'company-mode))
-
-(use-package company-lsp
-  :after (company lsp-mode))
 
 (use-package lsp-mode
   :defer t
