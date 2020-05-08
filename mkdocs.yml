@@ -1,2 +1,5 @@
 site_name: Drift
-theme: readthedocs
+theme:
+  name: readthedocs
+  hljs_languages:
+    - lisp
