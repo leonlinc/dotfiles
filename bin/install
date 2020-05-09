@@ -1,3 +1,4 @@
-#!/usr/bin/env sh
-BASE=$(realpath $(dirname $0)/..)
-grep -q $BASE ~/.bashrc || echo "source $BASE/src/bash/bashrc" >> ~/.bashrc
+#!/usr/bin/env bash
+BASE=$(realpath $(dirname $0)/../src)
+grep -q $BASE ~/.bashrc || echo "source $BASE/.bashrc" >> ~/.bashrc
+for f in $BASE/.{gitconfig,inputrc,tmux.conf,vimrc}; do ln -fsv $f ~; done
