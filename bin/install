@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+BASE=$(realpath $(dirname $0)/..)
+grep -q $BASE ~/.bashrc || echo "source $BASE/src/bash/bashrc" >> ~/.bashrc

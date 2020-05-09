@@ -27,7 +27,8 @@ dot_install .tmux.conf
 dot_install .vimrc
 
 # alias
-alias e='emacsclient -nw'
+alias e=emacs
+alias ec='emacsclient -nw'
 if [ "$(uname)" == "Darwin" ]; then
   alias grep='grep --color=auto'
   alias ls='ls -G'
