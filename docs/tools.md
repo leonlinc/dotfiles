@@ -17,18 +17,18 @@ Kill to the start of line.
 C-u 0 C-k
 ```
 
-# iTerm2
+## iTerm2
 
 Check the [FAQ](https://www.iterm2.com/faq.html) for
 
 - Where does iTerm2 store its settings?
 - How do I make the option/alt key act like Meta or send escape codes?
 
-# Adobe Reader
+## Adobe Reader
 
 - [How do I prevent the sidebar from opening by default?][1]
 
-# Chrome
+## Chrome
 
 - [Native HLS Playback][2]
 
