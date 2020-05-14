@@ -17,5 +17,5 @@ start_ssh_agent () {
   echo "Starting new SSH agent..."
   ssh-agent | sed '/^echo/d' > $SSH_ENV
   . $SSH_ENV
-  ssh-add ~/.ssh/*_rsa
+  ssh-add
 }
