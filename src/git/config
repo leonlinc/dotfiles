@@ -6,7 +6,7 @@
   cp = cherry-pick
   d  = diff
   dc = diff --cached
-  l  = log --decorate --graph --oneline 
+  l  = log --decorate --decorate-refs-exclude='tags/*' --graph --oneline 
   s  = status -s
 [color]
   ui = auto
