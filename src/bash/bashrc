@@ -18,7 +18,7 @@ VIMINIT='let $MYVIMRC="~/.config/vim/vimrc" | source $MYVIMRC'; export VIMINIT
 # ssh
 SSH_ENV="$HOME/.ssh/env"
 [ -f $SSH_ENV ] && . $SSH_ENV
-start_ssh_agent () {
+start-ssh-agent () {
   echo "Starting new SSH agent..."
   ssh-agent | sed '/^echo/d' > $SSH_ENV
   . $SSH_ENV

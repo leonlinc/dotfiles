@@ -2,5 +2,5 @@
 src=$(realpath $(dirname $0)/../src)
 mkdir -p ~/{.config,.ssh,tmp}
 for x in $src/*; do ln -svf $x ~/.config; done
-grep -qs ~/.config ~/.bashrc || echo >> ~/.bashrc ". ~/.config/bash/bashrc"
-grep -qs ~/.config ~/.ssh/rc || echo >> ~/.ssh/rc ". ~/.config/ssh/rc"
+grep -qs '~/.config' ~/.bashrc || echo >> ~/.bashrc '. ~/.config/bash/bashrc'
+grep -qs '~/.config' ~/.ssh/rc || echo >> ~/.ssh/rc '. ~/.config/ssh/rc'
