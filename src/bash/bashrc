@@ -1,14 +1,19 @@
 # alias
 alias e=emacs
-alias ec='emacsclient -nw'
+alias ec='emacsclient -t'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
+alias tmux='tmux -f ~/.config/tmux/tmux.conf'
 if [ "$(uname -n)" == "Lap1077" ]; then
   alias open=explorer.exe
 fi
 
-# export
+# readline
+INPUTRC=~/.config/readline/inputrc
+
+# vim
 EDITOR=vim; export EDITOR;
+VIMINIT='let $MYVIMRC="~/.config/vim/vimrc" | source $MYVIMRC'; export VIMINIT
 
 # ssh
 SSH_ENV="$HOME/.ssh/env"

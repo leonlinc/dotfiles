@@ -1,4 +1,4 @@
 if [ -S "$SSH_AUTH_SOCK" ]; then
-  ln -fs $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+  ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
   echo "SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock; export SSH_AUTH_SOCK;" > ~/.ssh/env
 fi

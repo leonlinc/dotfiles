@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 src=$(realpath $(dirname $0)/../src)
-mkdir -p ~/.{config,ssh,vim}
-grep -q $src ~/.bashrc || echo ". $src/bash/bashrc" >> ~/.bashrc
-ln -fsv $src/bash/inputrc ~/.inputrc
-ln -fsv $src/git ~/.config
-ln -fsv $src/ssh/rc ~/.ssh
-ln -fsv $src/tmux/tmux.conf ~/.tmux.conf
-ln -fsv $src/vim/colors ~/.vim
-ln -fsv $src/vim/vimrc ~/.vim
+mkdir -p ~/{.config,.ssh,tmp}
+for x in $src/*; do ln -svf $x ~/.config; done
+grep -qs ~/.config ~/.bashrc || echo >> ~/.bashrc ". ~/.config/bash/bashrc"
+grep -qs ~/.config ~/.ssh/rc || echo >> ~/.ssh/rc ". ~/.config/ssh/rc"
