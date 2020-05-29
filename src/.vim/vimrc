@@ -2,7 +2,6 @@ so $VIMRUNTIME/defaults.vim
 
 set bdir-=.
 set dir -=.
-set rtp +=~/.config/vim
 set hls
 
 if has('gui_running')

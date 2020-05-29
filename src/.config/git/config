@@ -10,3 +10,7 @@
   s  = status -s
 [color]
   ui = auto
+[core]
+  editor = vim
+[user]
+  name = llin
