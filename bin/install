@@ -3,9 +3,9 @@
 mkdir -p ~/tmp
 
 if [ -z "$1" ]; then
-	dst=~
+	dst="~"
 else
-	dst=$1:~
+	dst="$1:~"
 fi
 cd $(dirname $0)/../src
 rsync -rv $(ls -A) $dst

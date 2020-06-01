@@ -7,4 +7,6 @@ if [[ "$(uname -r)" =~ "microsoft" ]]; then
 	alias open=explorer.exe
 fi
 
-SSH_AUTH_SOCK=~/.ssh/sock; export SSH_AUTH_SOCK;
+if [ -S ~/.ssh/sock ]; then
+	SSH_AUTH_SOCK=~/.ssh/sock; export SSH_AUTH_SOCK;
+fi
