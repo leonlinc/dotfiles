@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+function setup-doom {
+	if [ ! -e ~/.emacs.d ]; then
+		git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+		ln -s ~/.emacs.d/bin/doom ~/.local/bin
+		yes | doom install
+	else
+		echo "~/.emacs.d already exists!"
+	fi
+}
+
+function setup-ssh {
+	ln -s ~/.config/ssh/rc ~/.ssh/rc
+}
+
+# https://www.gnu.org/software/emacs/manual/html_node/efaq/Colors-on-a-TTY.html
+function setup-term {
+	for t in {xterm,screen}-256color; do
+		src=/tmp/terminfo.src
+		infocmp -x $t >$src
+		echo -e "\tsetb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm," >> $src
+		echo -e "\tsetf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm," >> $src
+		tic -x $src
+	done
+}
+
+function setup-ubuntu {
+	sudo apt update
+	sudo apt install emacs-nox neovim ripgrep
+}
+
+function setup-dot {
+	rsync -av $(ls -d src/.??*) "${1:-$HOME}"
+}
+
+case "$1" in
+	dot   ) setup-dot "$2" ;;
+	doom  ) setup-doom     ;;
+	ssh   ) setup-ssh      ;;
+	term  ) setup-term     ;;
+	ubuntu) setup-ubuntu   ;;
+esac
